@@ -22,7 +22,7 @@ detect_distro() {
 
 pause() {
     read -n1 -r -p "Press any key to continue..." key
- }
+ 
     clear
     echo -e "\e[1;31m"
     if ! [ -x "$(command -v figlet)" ]; then
