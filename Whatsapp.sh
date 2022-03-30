@@ -5,9 +5,9 @@ termux-setup-storage
 
 git clone https://github.com/DRACULA-HACK/AUTO-ADMIN_WHATSAPP 
 
-cd AUTO-ADMIN_WHATSAPP
 
-bash admin.sh
+
+
 clear
 
 
