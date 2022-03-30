@@ -1,11 +1,10 @@
-1clear
+
+
+ 
+clear
  rm -rf AUTO-ADMIN_WHATSAPP
 
 termux-setup-storage
-
-git clone https://github.com/DRACULA-HACK/AUTO-ADMIN_WHATSAPP 
-
-
 
 
 clear
