@@ -8,6 +8,32 @@ cd whatsapp-number_ban
 #
 #
 bash wha-ban.sh
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
 
 
 
